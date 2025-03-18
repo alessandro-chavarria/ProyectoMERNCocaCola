@@ -3,14 +3,14 @@ import employeesModels from "../models/Employees.js";
 
 //SELECT
 employeesController.getEmployees = async (req, res) => {
-    const employees = await productsModel.find()
-    res.json(products)
+    const employees = await employeesModels.find()
+    res.json(employees)
 }
 
 //INSERT
 employeesController.insertEmployees = async (req, res) => {
     const {name, Lastname,  birthday, email, address, hireDate, password, telephone, dui, isssNumber, isVerified} = req.body;
-    const newProducts = new productsModel({name, Lastname,  birthday, email, address, hireDate, password, telephone, dui, isssNumber, isVerified})
+    const newEmployees = new employeesModels({name, Lastname,  birthday, email, address, hireDate, password, telephone, dui, isssNumber, isVerified})
     await newEmployees.save()
     res.json({message: "employee saved"});
 }

@@ -2,7 +2,7 @@ const reviewsController = {};
 import { populate } from "dotenv";
 import reviewsModel from "../models/Reviews.js";
 
-//SELECT
+//SELECT CON ID 
 reviewsController.getReviews = async (req, res) =>{
     const reviews = await reviewsModel.find().populate("idClient");
     res.json(reviews)
