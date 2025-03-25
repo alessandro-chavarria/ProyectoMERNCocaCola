@@ -39,17 +39,12 @@ const employeesSchema = new Schema ({
         minLength: 6
     },
     telephone: {
-        type: String,
+        type: Number,
         required: true,
-        match: [
-          /^[0-9]{8}$/,
-          "El teléfono debe contener exactamente 8 dígitos numéricos"
-        ]
     },
     dui: {
         type: String,
       default: null, 
-      match: [/^[0-9]{8}-[0-9]{1}$/, "El formato del DUI debe ser 12345678-9"]
     },
     isssNumber: {
         type: Number,
