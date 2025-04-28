@@ -1,17 +1,17 @@
-//En este archivo dentro de la carpeta routes, vamos a colocar, que metodos tiene la ruta "/api/products"
 import express from "express";
 import productsController from "../controllers/productsController.js";
-
+// Router() nos ayuda a colocar los metodos
+// que tendra mi ruta
 const router = express.Router();
 
-// /api/products/
-router.route("/")
-.get(productsController.getProducts)
-.post(productsController.insertProducts)
+router
+  .route("/")
+  .get(productsController.getProducts)
+  .post(productsController.createProducts);
 
-//put y delete piden ID
-router.route("/:id")
-.put(productsController.updateProducts)
-.delete(productsController.deleteProduct);
+router
+  .route("/:id")
+  .put(productsController.updateProducts)
+  .delete(productsController.deleteProducts);
 
 export default router;

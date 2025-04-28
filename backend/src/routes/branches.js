@@ -1,14 +1,17 @@
 import express from "express";
-import branchesControllers from "../controllers/branchesControllers.js";
-
+import branchesController from "../controllers/branchesController.js";
+// Router() nos ayuda a colocar los metodos
+// que tendra mi ruta
 const router = express.Router();
 
-router.route("/")
-.get(branchesControllers.getBranches)
-.post(branchesControllers.insertBranches)
+router
+  .route("/")
+  .get(branchesController.getbranches)
+  .post(branchesController.createbranches);
 
-router.route("/:id")
-.put(branchesControllers.updateBranches)
-.delete(branchesControllers.deleteBranches);
+router
+  .route("/:id")
+  .put(branchesController.updatebranches)
+  .delete(branchesController.deletebranches);
 
 export default router;
